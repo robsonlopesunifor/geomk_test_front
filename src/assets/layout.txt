@@ -1,0 +1,51 @@
+adicionar 
+#E02A4A
+
+background rede social
+#F0F0F0
+
+cabecario
+#3A3A3A
+
+celecao
+#EFF0F0
+
+letra cabecario
+#BFC0C1
+
+letra barra
+#535353
+#E02A4A
+
+icon barra 100 por 60
+
+configuraçoes 32 por 32
+
+icon rede sociais 120 por 120
+
+novo 72 por 32
+
+loja fonte
+#363636
+#878787
+
+lojas
+1200 / 1120
+
+botao azul
+#4A8FE2
+
+loja
+140 w 
+
+
+rede social celecionada
+facebook #39589B
+twitter  #50ABF1
+instagran #C4368B
+negocio #70AAFB
+pinterest #CF0000
+linkedin #3279AA
+youtube #EE1216
+whatshap #55F473
+analytics #F27901

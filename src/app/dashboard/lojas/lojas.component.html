@@ -1,0 +1,15 @@
+<div class="modal-body">
+    <ul id="lojas" >
+        <li class="loja" *ngFor="let loja of lojas_da_rede_social['lojas']" >
+            <img [src]="loja.picture" class="loja-logo" />
+            <div class="loja-info" >
+                <div class="loja-nome" >{{loja.name}}</div>
+                <div class="loja-site" >{{loja.url}}</div>
+            </div>
+            <label class="container">.
+                <input class="checkmark"type="checkbox" [(ngModel)]="loja.ativo" >
+                <span class="checkmark"></span>
+            </label>
+        </li>
+    </ul>
+</div>

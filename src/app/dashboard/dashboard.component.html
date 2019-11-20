@@ -1,0 +1,53 @@
+
+<ul id="redes_sociais" >
+    <li class="rede_social"
+       *ngFor="let rede_social of logas_por_redes_sociais" 
+       (click)="selecionarLojas(rede_social)" >
+
+        <ul *ngIf="haLojasSelecionadas(rede_social.lojas)"
+            class="rede_social_lojas"
+            (click)="openModal(template)"
+            [style.background-color]="rede_social.background" >
+            <li><img [src]="rede_social.imagem" ></li>
+            <li *ngFor="let loja of rede_social.lojas" >
+                <img [src]="loja.picture" *ngIf="loja.ativo">
+            </li> 
+        </ul>
+
+        <div class="rede_social_logo" >
+            <img [src]="rede_social.imagem" >
+            <div class="rede_social_nome">
+                {{rede_social.rede_social}}
+            </div>
+            <button (click)="openModal(template)" class="btn btn-danger rede_social_adicionar" >Adicionar</button>
+        </div>
+    </li>
+</ul>
+
+
+<ng-template #template id="modal">
+    <div class="modal-header model-sem-borda">
+        <img [src]="lojas_da_rede_social.imagem" id="modal-logo" >
+        <h5 class="modal-title pull-left modal-texto" >
+            Vincular página do {{lojas_da_rede_social.rede_social}}
+        </h5>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-linha-tempo">
+        <img src="/assets/linha-tempo.fw.png" id="modal-linha" >
+        <div class="modal-info" >
+            Selecione a página que você deseja vincular a este perfil
+        </div>
+    </div>
+    <app-lojas [lojas_da_rede_social]="lojas_da_rede_social" ></app-lojas>
+    <div class="modal-info-2" >
+        <div class="modal-falha" >Não encontrou sua página ?</div>
+        <div class="modal-atualizar" >Clique aqui para atualizar suas permissões do {{lojas_da_rede_social.rede_social}}</div>
+    </div>
+    <div id="modal-buttom">
+        <button id="modal-buttom-voltar" type="button" >VOLTAR</button>
+        <button (click)="salvarLojas()" (click)="modalRef.hide()" class="btn btn-info modal-buttom-proximo" type="button" >PRÓXIMO ></button>
+    </div>
+</ng-template>
